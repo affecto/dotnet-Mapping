@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mapping", "Mapping\Mapping.csproj", "{E21843F9-7200-4072-BA07-0918A046BFEA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mapping.AutoMapper", "Mapping.AutoMapper\Mapping.AutoMapper.csproj", "{BDFEED46-6B5D-4D6D-B333-13EFD3DC8DEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mapping.Tests", "Mapping.Tests\Mapping.Tests.csproj", "{B1932D78-2496-4ADD-8444-0B363E11A9E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mapping.AutoMapper.Tests", "Mapping.AutoMapper.Tests\Mapping.AutoMapper.Tests.csproj", "{893FD164-DF18-45A0-93AC-143CA8128B51}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit tests", "Unit tests", "{80E73460-91DF-4FAD-94C2-F3A9BD3EA645}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "root", "root", "{696DA3B4-86D6-4690-87A3-017C8506A4B2}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		appveyor.yml = appveyor.yml
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E21843F9-7200-4072-BA07-0918A046BFEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E21843F9-7200-4072-BA07-0918A046BFEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E21843F9-7200-4072-BA07-0918A046BFEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E21843F9-7200-4072-BA07-0918A046BFEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDFEED46-6B5D-4D6D-B333-13EFD3DC8DEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDFEED46-6B5D-4D6D-B333-13EFD3DC8DEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDFEED46-6B5D-4D6D-B333-13EFD3DC8DEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDFEED46-6B5D-4D6D-B333-13EFD3DC8DEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1932D78-2496-4ADD-8444-0B363E11A9E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1932D78-2496-4ADD-8444-0B363E11A9E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1932D78-2496-4ADD-8444-0B363E11A9E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1932D78-2496-4ADD-8444-0B363E11A9E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{893FD164-DF18-45A0-93AC-143CA8128B51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{893FD164-DF18-45A0-93AC-143CA8128B51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{893FD164-DF18-45A0-93AC-143CA8128B51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{893FD164-DF18-45A0-93AC-143CA8128B51}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B1932D78-2496-4ADD-8444-0B363E11A9E4} = {80E73460-91DF-4FAD-94C2-F3A9BD3EA645}
+		{893FD164-DF18-45A0-93AC-143CA8128B51} = {80E73460-91DF-4FAD-94C2-F3A9BD3EA645}
+	EndGlobalSection
+EndGlobal
