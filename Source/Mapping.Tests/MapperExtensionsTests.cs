@@ -27,7 +27,7 @@ namespace Affecto.Mapping.Tests
         [TestMethod]
         public void MapNullSourceToEmptyListOneWay()
         {
-            ICollection<int> results = mapper.Map((IEnumerable<string>) null);
+            IReadOnlyCollection<int> results = mapper.Map((IEnumerable<string>) null);
 
             Assert.IsNotNull(results);
             Assert.AreEqual(0, results.Count);
@@ -37,7 +37,7 @@ namespace Affecto.Mapping.Tests
         [TestMethod]
         public void MapNullSourceToEmptyListTwoWay()
         {
-            ICollection<string> results = mapper.Map((IEnumerable<int>) null);
+            IReadOnlyCollection<string> results = mapper.Map((IEnumerable<int>) null);
 
             Assert.IsNotNull(results);
             Assert.AreEqual(0, results.Count);
@@ -49,7 +49,7 @@ namespace Affecto.Mapping.Tests
         {
             var source = new List<string> { String1, String2 };
 
-            ICollection<int> results = mapper.Map(source);
+            IReadOnlyCollection<int> results = mapper.Map(source);
 
             Assert.AreEqual(2, results.Count);
             Assert.AreEqual(Int1, results.ElementAt(0));
@@ -61,7 +61,7 @@ namespace Affecto.Mapping.Tests
         {
             var source = new List<int> { Int1, Int2 };
 
-            ICollection<string> results = mapper.Map(source);
+            IReadOnlyCollection<string> results = mapper.Map(source);
 
             Assert.AreEqual(2, results.Count);
             Assert.AreEqual(String1, results.ElementAt(0));

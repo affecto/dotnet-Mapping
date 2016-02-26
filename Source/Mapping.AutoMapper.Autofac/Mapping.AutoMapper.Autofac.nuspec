@@ -6,7 +6,7 @@
     <authors>$author$</authors>
     <description>$description$</description>
     <projectUrl>https://github.com/affecto/dotnet-Mapping</projectUrl>
-    <tags>affecto map mapping</tags>
-    <releaseNotes>Updated to .NET 4.5.2.</releaseNotes>
+    <tags>affecto map mapping AutoMapper Autofac</tags>
+    <releaseNotes>Initial version.</releaseNotes>
   </metadata>
 </package>

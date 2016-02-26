@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 
 [assembly: AssemblyTitle("Affecto.Mapping.AutoMapper")]
-[assembly: AssemblyDescription("AutoMapper implementation for one-way and two-way mapper interfaces defined in Affecto.Mapping NuGet.")]
+[assembly: AssemblyDescription("Extension methods for registering the mappers from Affecto.Mapping.AutoMapper NuGet into Autofac container.")]
 [assembly: AssemblyCompany("Affecto")]
 
 [assembly: AssemblyVersion("2.0.0.0")]

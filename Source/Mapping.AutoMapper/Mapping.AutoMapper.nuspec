@@ -7,6 +7,6 @@
     <description>$description$</description>
     <projectUrl>https://github.com/affecto/dotnet-Mapping</projectUrl>
     <tags>affecto map mapping AutoMapper</tags>
-    <releaseNotes>Moved to GitHub.</releaseNotes>
+    <releaseNotes>Updated to .NET 4.5.2. Updated to use the new AutoMapper instance-based API and mapping profiles.</releaseNotes>
   </metadata>
 </package>
