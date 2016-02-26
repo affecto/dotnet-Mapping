@@ -10,6 +10,6 @@
 
 | Target | Build |
 | -----------------------|------------------|
-| Project | [![Build status](https://ci.appveyor.com/api/projects/status/v99lxtuud9r3fvl7?svg=true)](https://ci.appveyor.com/project/johannesvaltonen/dotnet-mapping) |
-| Master branch | [![Build status](https://ci.appveyor.com/api/projects/status/v99lxtuud9r3fvl7/branch/master?svg=true)](https://ci.appveyor.com/project/johannesvaltonen/dotnet-mapping/branch/master) |
-| Dev branch | [![Build status](https://ci.appveyor.com/api/projects/status/v99lxtuud9r3fvl7/branch/dev?svg=true)](https://ci.appveyor.com/project/johannesvaltonen/dotnet-mapping/branch/dev) |
+| Project | [![Build status](https://ci.appveyor.com/api/projects/status/v99lxtuud9r3fvl7?svg=true)](https://ci.appveyor.com/project/affecto/dotnet-mapping) |
+| Master branch | [![Build status](https://ci.appveyor.com/api/projects/status/v99lxtuud9r3fvl7/branch/master?svg=true)](https://ci.appveyor.com/project/affecto/dotnet-mapping/branch/master) |
+| Dev branch | [![Build status](https://ci.appveyor.com/api/projects/status/v99lxtuud9r3fvl7/branch/development?svg=true)](https://ci.appveyor.com/project/affecto/dotnet-mapping/branch/development) |
