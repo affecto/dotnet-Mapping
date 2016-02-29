@@ -5,6 +5,11 @@ namespace Affecto.Mapping.AutoMapper.Autofac
 {
     public static class RegistrationExtensions
     {
+        /// <summary>
+        /// Configures AutoMapper with all mapping profiles currently registered to Autofac container.
+        /// </summary>
+        /// <param name="builder"></param>
+        /// <param name="mapperConfigurationFactory">Custom AutoMapper configuration factory.</param>
         public static void ConfigureAutoMapper(this ContainerBuilder builder, MapperConfigurationFactory mapperConfigurationFactory)
         {
             builder.Register(mapperConfigurationFactory.CreateMapperConfiguration)
@@ -14,11 +19,21 @@ namespace Affecto.Mapping.AutoMapper.Autofac
                 .As<IMapper>();
         }
 
+        /// <summary>
+        /// Configures AutoMapper with all mapping profiles currently registered to Autofac container.
+        /// </summary>
+        /// <param name="builder"></param>
         public static void ConfigureAutoMapper(this ContainerBuilder builder)
         {
             ConfigureAutoMapper(builder, new MapperConfigurationFactory());
         }
 
+        /// <summary>
+        /// Registers a mapping profile and corresponding mapper to Autofac container.
+        /// </summary>
+        /// <typeparam name="TProfile">Mapping profile type.</typeparam>
+        /// <typeparam name="TSource">Mapping source type.</typeparam>
+        /// <typeparam name="TDestination">Mapping destination type.</typeparam>
         public static void RegisterMappingProfile<TProfile, TSource, TDestination>(this ContainerBuilder builder)
             where TProfile : Profile, IMappingProfile<TSource, TDestination>
         {
@@ -30,6 +45,12 @@ namespace Affecto.Mapping.AutoMapper.Autofac
             builder.Register(ResolveMapper<TProfile, TSource, TDestination>);
         }
 
+        /// <summary>
+        /// Registers a two-way mapping profile and corresponding mapper to Autofac container.
+        /// </summary>
+        /// <typeparam name="TProfile">Mapping profile type.</typeparam>
+        /// <typeparam name="TSource">Mapping source type.</typeparam>
+        /// <typeparam name="TDestination">Mapping destination type.</typeparam>
         public static void RegisterTwoWayMappingProfile<TProfile, TSource, TDestination>(this ContainerBuilder builder)
             where TProfile : Profile, ITwoWayMappingProfile<TSource, TDestination>
         {
