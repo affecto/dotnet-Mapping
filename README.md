@@ -16,3 +16,100 @@
 | Project | [![Build status](https://ci.appveyor.com/api/projects/status/v99lxtuud9r3fvl7?svg=true)](https://ci.appveyor.com/project/affecto/dotnet-mapping) |
 | Master branch | [![Build status](https://ci.appveyor.com/api/projects/status/v99lxtuud9r3fvl7/branch/master?svg=true)](https://ci.appveyor.com/project/affecto/dotnet-mapping/branch/master) |
 | Dev branch | [![Build status](https://ci.appveyor.com/api/projects/status/v99lxtuud9r3fvl7/branch/development?svg=true)](https://ci.appveyor.com/project/affecto/dotnet-mapping/branch/development) |
+
+## AutoMapper & Autofac code examples
+
+#### Creating a basic mapping profile with out-of-the-box mapper implementation
+
+```
+internal class PersonProfile : MappingProfile<IPerson, Person>
+{
+    protected override void ConfigureMapping(IMappingExpression<IPerson, Person> map)
+    {
+        // Properties with matching names are mapped automatically.
+        map.ForMember(dest => dest.Id, opt => opt.MapFrom(source => source.Identifier));
+        map.ForMember(dest => dest.HomeAddress, opt => opt.MapFrom(source => source.Address.Home));
+    }
+}
+```
+
+#### Creating a mapping profile with custom mapper implementation
+
+```
+internal class PersonProfile : MappingProfile<IPerson, Person>
+{
+    public override IMapper<IPerson, Person> CreateMapper(IMapper mapper)
+    {
+        return new PersonMapper(mapper);
+    }
+
+    protected override void ConfigureMapping(IMappingExpression<IPerson, Person> map)
+    {
+        // Properties with matching names are mapped automatically.
+        map.ForMember(dest => dest.Id, opt => opt.MapFrom(source => source.Identifier));
+        map.ForMember(dest => dest.HomeAddress, opt => opt.MapFrom(source => source.Address.Home));
+    }
+
+    public class PersonMapper : Mapper
+    {
+        public PersonMapper(IMapper mapper)
+            : base(mapper)
+        {
+        }
+
+        public override Person Map(IPerson source)
+        {
+            // Perform complicated custom mapping here if it cannot be done with AutoMapper
+            return base.Map(source);
+        }
+    }
+}
+```
+
+#### Registering mapping profiles to Autofac container using extension method
+
+```
+public class MappingModule : Module
+{
+    protected override void Load(ContainerBuilder builder)
+    {
+        base.Load(builder);
+        builder.RegisterMappingProfile<PersonProfile, IPerson, Person>();
+    }
+}
+```
+
+#### Configuring AutoMapper to use registered mapping profiles
+
+```
+public class ApplicationModule : Module
+{
+    protected override void Load(ContainerBuilder builder)
+    {
+        base.Load(builder);
+        builder.ConfigureAutoMapper();
+    }
+}
+```
+
+#### Configuring AutoMapper to use registered mapping profiles with custom configuration
+
+```
+public class ApplicationModule : Module
+{
+    protected override void Load(ContainerBuilder builder)
+    {
+        base.Load(builder);
+        builder.ConfigureAutoMapper(new CustomMapperConfigurationFactory());
+    }
+}
+
+internal class CustomMapperConfigurationFactory : MapperConfigurationFactory
+{
+    protected override void AddCustomConfiguration(IMapperConfiguration configuration)
+    {
+        base.AddCustomConfiguration(configuration);
+        configuration.DestinationMemberNamingConvention = new LowerUnderscoreNamingConvention();
+    }
+}
+```
