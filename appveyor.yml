@@ -4,7 +4,7 @@ pull_requests:
 nuget:
   disable_publish_on_pr: true
 before_build:
-- cmd: nuget restore
+- cmd: nuget restore "Source\Mapping.sln"
 build:
   publish_nuget: true
   publish_nuget_symbols: true
