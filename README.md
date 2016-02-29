@@ -3,8 +3,11 @@
   * Interfaces and extension methods for one-way and two-way mappers.
   * NuGet: https://www.nuget.org/packages/Affecto.Mapping
 * **Affecto.Mapping.AutoMapper**
-  * AutoMapper implementation for one-way and two-way mapper interfaces defined in Affecto.Mapping NuGet.
+  * Implementation for one-way and two-way mappers using AutoMapper profiles.
   * NuGet: https://www.nuget.org/packages/Affecto.Mapping.AutoMapper
+* **Affecto.Mapping.AutoMapper.Autofac**
+  * Extension methods for registering AutoMapper profiles to Autofac container and configuring AutoMapper to use them.
+  * NuGet: https://www.nuget.org/packages/Affecto.Mapping.AutoMapper.Autofac
 
 ## Build status
 
