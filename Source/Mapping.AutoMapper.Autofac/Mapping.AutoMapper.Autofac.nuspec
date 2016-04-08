@@ -7,6 +7,6 @@
     <description>$description$</description>
     <projectUrl>https://github.com/affecto/dotnet-Mapping</projectUrl>
     <tags>affecto map mapping AutoMapper Autofac</tags>
-    <releaseNotes>Initial version.</releaseNotes>
+    <releaseNotes>Added an implementation for mapper factory. Use base implementation of AutoMapper configuration factory.</releaseNotes>
   </metadata>
 </package>
