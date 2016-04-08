@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="IMappingProfile.cs" />
     <Compile Include="ITwoWayMappingProfile.cs" />
+    <Compile Include="MapperConfigurationFactory.cs" />
     <Compile Include="MappingProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TwoWayMappingProfile.cs" />

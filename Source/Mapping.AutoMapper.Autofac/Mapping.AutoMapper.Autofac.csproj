@@ -44,7 +44,8 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MapperConfigurationFactory.cs" />
+    <Compile Include="AutofacMapperConfigurationFactory.cs" />
+    <Compile Include="AutofacMapperFactory.cs" />
     <Compile Include="RegistrationExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

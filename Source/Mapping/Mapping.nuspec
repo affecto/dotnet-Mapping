@@ -7,6 +7,6 @@
     <description>$description$</description>
     <projectUrl>https://github.com/affecto/dotnet-Mapping</projectUrl>
     <tags>affecto map mapping</tags>
-    <releaseNotes>Updated to .NET 4.5.2.</releaseNotes>
+    <releaseNotes>Added an interface for mapper factory.</releaseNotes>
   </metadata>
 </package>

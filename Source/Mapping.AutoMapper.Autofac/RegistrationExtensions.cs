@@ -10,13 +10,15 @@ namespace Affecto.Mapping.AutoMapper.Autofac
         /// </summary>
         /// <param name="builder"></param>
         /// <param name="mapperConfigurationFactory">Custom AutoMapper configuration factory.</param>
-        public static void ConfigureAutoMapper(this ContainerBuilder builder, MapperConfigurationFactory mapperConfigurationFactory)
+        public static void ConfigureAutoMapper(this ContainerBuilder builder, AutofacMapperConfigurationFactory mapperConfigurationFactory)
         {
             builder.Register(mapperConfigurationFactory.CreateMapperConfiguration)
                 .SingleInstance();
 
             builder.Register(context => context.Resolve<MapperConfiguration>().CreateMapper())
                 .As<IMapper>();
+
+            builder.RegisterType<AutofacMapperFactory>().As<IMapperFactory>();
         }
 
         /// <summary>
@@ -25,7 +27,7 @@ namespace Affecto.Mapping.AutoMapper.Autofac
         /// <param name="builder"></param>
         public static void ConfigureAutoMapper(this ContainerBuilder builder)
         {
-            ConfigureAutoMapper(builder, new MapperConfigurationFactory());
+            ConfigureAutoMapper(builder, new AutofacMapperConfigurationFactory());
         }
 
         /// <summary>
