@@ -46,7 +46,7 @@ namespace Affecto.Mapping.AutoMapper
         public MapperConfiguration CreateMapperConfiguration(Assembly assembly)
         {
             Profile[] profiles = assembly.DefinedTypes
-                .Where(t => t.IsAssignableFrom(typeof(Profile)))
+                .Where(t => t.IsSubclassOf(typeof(Profile)))
                 .Select(t => Activator.CreateInstance(t.AsType()))
                 .Cast<Profile>()
                 .ToArray();
@@ -58,7 +58,7 @@ namespace Affecto.Mapping.AutoMapper
         /// Set custom AutoMapper configuration settings.
         /// </summary>
         /// <param name="configuration">AutoMapper configuration.</param>
-        protected virtual void AddCustomConfiguration(IMapperConfiguration configuration)
+        protected virtual void AddCustomConfiguration(IMapperConfigurationExpression configuration)
         {
             // Map properties with public or internal getters
             configuration.ShouldMapProperty = p => (p.GetMethod != null && (p.GetMethod.IsPublic || p.GetMethod.IsAssembly));
