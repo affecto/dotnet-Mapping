@@ -20,25 +20,29 @@ namespace Affecto.Mapping.AutoMapper.Tests
         {
             TestMappingProfile testMappingProfile = new TestMappingProfile();
             MapperConfiguration mapperConfiguration = sut.CreateMapperConfiguration(Assembly.GetExecutingAssembly());
+
             IMapper<Class1, Class2> mapper = testMappingProfile.CreateMapper(mapperConfiguration.CreateMapper());
+            Class2 result = mapper.Map(new Class1 { Prop = "Value" });
 
             Assert.IsNotNull(mapper);
+            Assert.IsNotNull(result);
+            Assert.AreEqual("Value", result.Prop);
         }
     }
 
-    internal class TestMappingProfile : MappingProfile<Class1, Class2>
+    public class TestMappingProfile : MappingProfile<Class1, Class2>
     {
         protected override void ConfigureMapping(IMappingExpression<Class1, Class2> map)
         {
         }
     }
 
-    internal class Class1
+    public class Class1
     {
         public string Prop { get; set; }
     }
 
-    internal class Class2
+    public class Class2
     {
         public string Prop { get; set; }
     }
