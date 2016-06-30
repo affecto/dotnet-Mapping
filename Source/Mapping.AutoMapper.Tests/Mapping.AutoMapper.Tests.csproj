@@ -71,6 +71,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="MapperConfigurationFactoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -80,6 +81,10 @@
     <ProjectReference Include="..\Mapping.AutoMapper\Mapping.AutoMapper.csproj">
       <Project>{BDFEED46-6B5D-4D6D-B333-13EFD3DC8DEF}</Project>
       <Name>Mapping.AutoMapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mapping\Mapping.csproj">
+      <Project>{E21843F9-7200-4072-BA07-0918A046BFEA}</Project>
+      <Name>Mapping</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
