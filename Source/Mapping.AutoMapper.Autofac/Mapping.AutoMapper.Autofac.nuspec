@@ -7,6 +7,6 @@
     <description>$description$</description>
     <projectUrl>https://github.com/affecto/dotnet-Mapping</projectUrl>
     <tags>affecto map mapping AutoMapper Autofac</tags>
-    <releaseNotes>Updated to AutoMapper 5.0.</releaseNotes>
+    <releaseNotes>Updated to AutoMapper 5.0.2 to fix weird MissingMethodExceptions.</releaseNotes>
   </metadata>
 </package>
