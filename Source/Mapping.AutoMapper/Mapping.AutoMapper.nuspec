@@ -7,6 +7,6 @@
     <description>$description$</description>
     <projectUrl>https://github.com/affecto/dotnet-Mapping</projectUrl>
     <tags>affecto map mapping AutoMapper</tags>
-    <releaseNotes>Removed MappingProfile Configure method and moved the code to the constructor instead.</releaseNotes>
+    <releaseNotes>Removed TwoWayMappingProfile Configure method and moved the code to the constructor instead.</releaseNotes>
   </metadata>
 </package>
