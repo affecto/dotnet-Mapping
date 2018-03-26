@@ -4,6 +4,13 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Affecto.Mapping.AutoMapper.Autofac</AssemblyName>
     <RootNamespace>Affecto.Mapping.AutoMapper.Autofac</RootNamespace>
+    <PackageReleaseNotes>Converted to .NET Standard 2.0</PackageReleaseNotes>
+    <Version>4.0.0</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Affecto</Authors>
+    <Description>Extension methods for registering the mappers from Affecto.Mapping.AutoMapper NuGet into Autofac container.</Description>
+    <PackageProjectUrl>https://github.com/affecto/dotnet-Mapping</PackageProjectUrl>
+    <PackageTags>affecto map mapping AutoMapper Autofac</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
