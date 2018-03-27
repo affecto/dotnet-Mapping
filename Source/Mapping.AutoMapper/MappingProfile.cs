@@ -3,7 +3,11 @@ using AutoMapper;
 
 namespace Affecto.Mapping.AutoMapper
 {
-    public abstract class MappingProfile<TSource, TDestination> : Profile, IMappingProfile<TSource, TDestination>
+    public abstract class MappingProfile : Profile
+    {
+    }
+
+    public abstract class MappingProfile<TSource, TDestination> : MappingProfile, IMappingProfile<TSource, TDestination>
     {
         protected MappingProfile()
         {

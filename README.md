@@ -63,6 +63,15 @@ internal class PersonProfile : MappingProfile<IPerson, Person>
 }
 ```
 
+#### Bootstrapping mapper factory without using Autofac container and requesting mappers
+
+Create a mapper factory instance and register your mapping profiles. Store mapper factory as a singleton.
+
+```csharp
+var mapperFactory = new MapperFactory(new PersonProfile(), new AddressProfile());
+IMapper<IPerson, Person> mapper = mapperFactory.Create<IPerson, Person>();
+```
+
 #### Registering mapping profiles to Autofac container using extension method
 
 ```csharp
@@ -107,6 +116,33 @@ internal class CustomMapperConfigurationFactory : MapperConfigurationFactory
     {
         base.AddCustomConfiguration(configuration);
         configuration.DestinationMemberNamingConvention = new LowerUnderscoreNamingConvention();
+    }
+}
+```
+
+#### Requesting mappers from Autofac container
+
+Using standard constructor injection, you can either inject a mapper instance and use it directly:
+
+```csharp
+public class SomeService
+{
+    public SomeService(IMapper<IPerson, Person> personMapper)
+    {
+        // Use mapper directly...
+    }
+}
+```
+
+...or inject a mapper factory instance and request mappers from it:
+
+```csharp
+public class SomeService
+{
+    public SomeService(IMapperFactory mapperFactory)
+    {
+        IMapper<IPerson, Person> personMapper = mapperFactory.Create<IPerson, Person>();
+        // Use mapper here...
     }
 }
 ```

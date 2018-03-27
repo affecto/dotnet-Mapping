@@ -7,7 +7,7 @@ using AutoMapper;
 namespace Affecto.Mapping.AutoMapper
 {
     /// <summary>
-    /// Factory class for creating AutoMapper configuration using mapping profiles.
+    /// Factory class for creating AutoMapper configuration using mapping profiles. Derive from this class to provide custom global configuration for all mappers.
     /// </summary>
     public class MapperConfigurationFactory
     {
@@ -55,7 +55,7 @@ namespace Affecto.Mapping.AutoMapper
         }
 
         /// <summary>
-        /// Set custom AutoMapper configuration settings.
+        /// Set custom, global AutoMapper configuration settings.
         /// </summary>
         /// <param name="configuration">AutoMapper configuration.</param>
         protected virtual void AddCustomConfiguration(IMapperConfigurationExpression configuration)
