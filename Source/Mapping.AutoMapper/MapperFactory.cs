@@ -10,7 +10,7 @@ namespace Affecto.Mapping.AutoMapper
     /// </summary>
     public class MapperFactory : IMapperFactory
     {
-        private readonly IReadOnlyCollection<Profile> profiles;
+        private readonly IReadOnlyCollection<MappingProfile> profiles;
         private readonly IMapper mapper;
 
         /// <summary>
@@ -18,7 +18,7 @@ namespace Affecto.Mapping.AutoMapper
         /// </summary>
         /// <param name="mapperConfigurationFactory">Custom configuration factory for providing global configuration for all mappers.</param>
         /// <param name="profiles">Mapping profiles to configure specific type mappers.</param>
-        public MapperFactory(MapperConfigurationFactory mapperConfigurationFactory, IEnumerable<Profile> profiles)
+        public MapperFactory(MapperConfigurationFactory mapperConfigurationFactory, IEnumerable<MappingProfile> profiles)
         {
             if (mapperConfigurationFactory == null)
             {
@@ -49,7 +49,7 @@ namespace Affecto.Mapping.AutoMapper
         /// Construct using a collection of specified mapping profiles.
         /// </summary>
         /// <param name="profiles">Mapping profiles to configure specific type mappers.</param>
-        public MapperFactory(IEnumerable<Profile> profiles)
+        public MapperFactory(IEnumerable<MappingProfile> profiles)
             : this(new MapperConfigurationFactory(), profiles)
         {
         }
@@ -60,7 +60,7 @@ namespace Affecto.Mapping.AutoMapper
         /// <param name="mapperConfigurationFactory">Custom configuration factory for providing global configuration for all mappers.</param>
         /// <param name="profile">Mapping profile to configure specific type mapper.</param>
         /// <param name="profiles">Mapping profiles to configure specific type mappers.</param>
-        public MapperFactory(MapperConfigurationFactory mapperConfigurationFactory, Profile profile, params Profile[] profiles)
+        public MapperFactory(MapperConfigurationFactory mapperConfigurationFactory, MappingProfile profile, params MappingProfile[] profiles)
             : this(mapperConfigurationFactory, new[] { profile }.Concat(profiles))
         {
         }
@@ -70,7 +70,7 @@ namespace Affecto.Mapping.AutoMapper
         /// </summary>
         /// <param name="profile">Mapping profile to configure specific type mapper.</param>
         /// <param name="profiles">Mapping profiles to configure specific type mappers.</param>
-        public MapperFactory(Profile profile, params Profile[] profiles)
+        public MapperFactory(MappingProfile profile, params MappingProfile[] profiles)
             : this(new[] { profile }.Concat(profiles))
         {
         }
@@ -82,7 +82,7 @@ namespace Affecto.Mapping.AutoMapper
         /// <typeparam name="TDestination">Destination type to map to.</typeparam>
         public IMapper<TSource, TDestination> Create<TSource, TDestination>()
         {
-            List<IMappingProfile<TSource, TDestination>> matchingProfiles = profiles.OfType<IMappingProfile<TSource, TDestination>>().ToList();
+            List<MappingProfile<TSource, TDestination>> matchingProfiles = profiles.OfType<MappingProfile<TSource, TDestination>>().ToList();
 
             if (matchingProfiles.Count == 0)
             {

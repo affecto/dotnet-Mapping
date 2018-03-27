@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using AutoMapper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Affecto.Mapping.AutoMapper.Tests
@@ -14,14 +13,14 @@ namespace Affecto.Mapping.AutoMapper.Tests
         [ExpectedException(typeof(ArgumentException))]
         public void CannotInstantiateFactoryWithoutProfiles()
         {
-            sut = new MapperFactory(new List<Profile>());
+            sut = new MapperFactory(new List<MappingProfile>());
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void CannotInstantiateFactoryWithNullProfiles()
         {
-            sut = new MapperFactory((Profile) null);
+            sut = new MapperFactory((MappingProfile) null);
         }
 
         [TestMethod]
