@@ -77,8 +77,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="MapperFactoryTests.cs" />
     <Compile Include="MapperConfigurationFactoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestMappingProfile.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Mapping.AutoMapper\Mapping.AutoMapper.csproj">
