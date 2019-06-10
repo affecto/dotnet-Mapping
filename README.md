@@ -146,3 +146,24 @@ public class SomeService
     }
 }
 ```
+
+#### Passing extra parameters to mapper
+
+In the mapping profile, define that a property gets its value from context items with a specific key:
+
+```csharp
+internal class PersonProfile : MappingProfile<IPerson, Person>
+{
+    protected override void ConfigureMapping(IMappingExpression<IPerson, Person> map)
+    {
+        // Properties with matching names are mapped automatically. "Id" is not present in source class, we'll pass it separately
+        map.ForMember(dest => dest.Id, opt => opt.ResolveUsing((src, dest, destMember, context) => context.Items["Id"]));
+    }
+}
+```
+
+Then use the overload of the Map method where you can pass one or more parameters:
+
+```csharp
+Person targetPerson = mapper.Map(sourcePerson, ("Id", 123));
+```
