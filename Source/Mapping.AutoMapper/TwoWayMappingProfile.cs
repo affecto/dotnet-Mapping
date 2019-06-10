@@ -28,6 +28,23 @@ namespace Affecto.Mapping.AutoMapper
             {
                 return mapper.Map<TDestination, TSource>(source);
             }
+
+            public virtual TSource Map(TDestination source, params (string parameterName, object parameterValue)[] parameters)
+            {
+                return mapper.Map<TDestination, TSource>(source, opt =>
+                {
+                    if (parameters != null)
+                    {
+                        foreach ((string parameterName, object parameterValue) parameter in parameters)
+                        {
+                            if (!string.IsNullOrWhiteSpace(parameter.parameterName) && parameter.parameterValue != null)
+                            {
+                                opt.Items.Add(parameter.parameterName, parameter.parameterValue);
+                            }
+                        }
+                    }
+                });
+            }
         }
     }
 }

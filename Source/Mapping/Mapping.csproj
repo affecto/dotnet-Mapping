@@ -9,9 +9,9 @@
     <Company>Affecto</Company>
     <PackageProjectUrl>https://github.com/affecto/dotnet-Mapping</PackageProjectUrl>
     <PackageTags>affecto map mapping</PackageTags>
-    <PackageReleaseNotes>Converted to .NET Standard 2.0</PackageReleaseNotes>
+    <PackageReleaseNotes>Added possibility to pass parameters to a mapping profile</PackageReleaseNotes>
     <Description>Interfaces and extension methods for one-way and two-way mappers.</Description>
-    <Version>4.0.0</Version>
+    <Version>4.2.0</Version>
   </PropertyGroup>
 
 </Project>

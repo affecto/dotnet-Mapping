@@ -9,11 +9,7 @@ namespace Affecto.Mapping.AutoMapper.Autofac
 
         public AutofacMapperFactory(IComponentContext componentContext)
         {
-            if (componentContext == null)
-            {
-                throw new ArgumentNullException(nameof(componentContext));
-            }
-            this.componentContext = componentContext;
+            this.componentContext = componentContext ?? throw new ArgumentNullException(nameof(componentContext));
         }
 
         public virtual IMapper<TSource, TDestination> Create<TSource, TDestination>()

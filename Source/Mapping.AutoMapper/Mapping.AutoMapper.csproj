@@ -5,12 +5,12 @@
     <AssemblyName>Affecto.Mapping.AutoMapper</AssemblyName>
     <RootNamespace>Affecto.Mapping.AutoMapper</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>4.0.0</Version>
+    <Version>4.2.0</Version>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <Authors>Affecto</Authors>
     <PackageTags>affecto map mapping AutoMapper</PackageTags>
     <PackageProjectUrl>https://github.com/affecto/dotnet-Mapping</PackageProjectUrl>
-    <PackageReleaseNotes>Converted to .NET Standard 2.0</PackageReleaseNotes>
+    <PackageReleaseNotes>Added possibility to pass parameters to a mapping profile</PackageReleaseNotes>
     <Description>AutoMapper implementation for one-way and two-way mapper interfaces defined in Affecto.Mapping NuGet.</Description>
   </PropertyGroup>
 
