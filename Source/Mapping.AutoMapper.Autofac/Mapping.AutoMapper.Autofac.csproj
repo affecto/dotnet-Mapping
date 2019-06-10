@@ -4,8 +4,8 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Affecto.Mapping.AutoMapper.Autofac</AssemblyName>
     <RootNamespace>Affecto.Mapping.AutoMapper.Autofac</RootNamespace>
-    <PackageReleaseNotes>Converted to .NET Standard 2.0</PackageReleaseNotes>
-    <Version>4.0.0</Version>
+    <PackageReleaseNotes>Added possibility to pass parameters to a mapping profile. Deprecated two-way-mapping.</PackageReleaseNotes>
+    <Version>4.2.0</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Affecto</Authors>
     <Description>Extension methods for registering the mappers from Affecto.Mapping.AutoMapper NuGet into Autofac container.</Description>

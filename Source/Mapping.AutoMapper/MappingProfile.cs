@@ -28,17 +28,34 @@ namespace Affecto.Mapping.AutoMapper
 
             public Mapper(IMapper mapper)
             {
-                if (mapper == null)
-                {
-                    throw new ArgumentNullException("mapper");
-                }
-
-                this.mapper = mapper;
+                this.mapper = mapper ?? throw new ArgumentNullException("mapper");
             }
 
             public virtual TDestination Map(TSource source)
             {
                 return mapper.Map<TSource, TDestination>(source);
+            }
+
+            public virtual TDestination Map(TSource source, params (string parameterName, object parameterValue)[] parameters)
+            {
+                return mapper.Map<TSource, TDestination>(source, opt =>
+                {
+                    AddMappingOperationOptionsItems(opt, parameters);
+                });
+            }
+
+            private void AddMappingOperationOptionsItems(IMappingOperationOptions<TSource, TDestination> options, (string parameterName, object parameterValue)[] parameters)
+            {
+                if (parameters != null)
+                {
+                    foreach ((string parameterName, object parameterValue) parameter in parameters)
+                    {
+                        if (!string.IsNullOrWhiteSpace(parameter.parameterName))
+                        {
+                            options.Items.Add(parameter.parameterName, parameter.parameterValue);
+                        }
+                    }
+                }
             }
         }
     }

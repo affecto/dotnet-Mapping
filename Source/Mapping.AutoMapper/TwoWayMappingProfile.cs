@@ -1,7 +1,9 @@
-﻿using AutoMapper;
+﻿using System;
+using AutoMapper;
 
 namespace Affecto.Mapping.AutoMapper
 {
+    [Obsolete("Two-way mapping is deprecated and it is going to be removed in a future major version.", false)]
     public abstract class TwoWayMappingProfile<TSource, TDestination> : MappingProfile<TSource, TDestination>, ITwoWayMappingProfile<TSource, TDestination>
     {
         protected TwoWayMappingProfile()
@@ -17,6 +19,7 @@ namespace Affecto.Mapping.AutoMapper
 
         protected abstract void ConfigureMapping(IMappingExpression<TDestination, TSource> map);
 
+        [Obsolete("Two-way mapping is deprecated and it is going to be removed in a future major version.", false)]
         public class TwoWayMapper : Mapper, ITwoWayMapper<TSource, TDestination>
         {
             public TwoWayMapper(IMapper mapper)
