@@ -40,17 +40,22 @@ namespace Affecto.Mapping.AutoMapper
             {
                 return mapper.Map<TSource, TDestination>(source, opt =>
                 {
-                    if (parameters != null)
+                    AddMappingOperationOptionsItems(opt, parameters);
+                });
+            }
+
+            internal void AddMappingOperationOptionsItems<TS, TD>(IMappingOperationOptions<TS, TD> options, (string parameterName, object parameterValue)[] parameters)
+            {
+                if (parameters != null)
+                {
+                    foreach ((string parameterName, object parameterValue) parameter in parameters)
                     {
-                        foreach ((string parameterName, object parameterValue) parameter in parameters)
+                        if (!string.IsNullOrWhiteSpace(parameter.parameterName))
                         {
-                            if (!string.IsNullOrWhiteSpace(parameter.parameterName) && parameter.parameterValue != null)
-                            {
-                                opt.Items.Add(parameter.parameterName, parameter.parameterValue);
-                            }
+                            options.Items.Add(parameter.parameterName, parameter.parameterValue);
                         }
                     }
-                });
+                }
             }
         }
     }

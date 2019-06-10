@@ -1,7 +1,9 @@
-﻿using AutoMapper;
+﻿using System;
+using AutoMapper;
 
 namespace Affecto.Mapping.AutoMapper
 {
+    [Obsolete]
     public abstract class TwoWayMappingProfile<TSource, TDestination> : MappingProfile<TSource, TDestination>, ITwoWayMappingProfile<TSource, TDestination>
     {
         protected TwoWayMappingProfile()
@@ -17,6 +19,7 @@ namespace Affecto.Mapping.AutoMapper
 
         protected abstract void ConfigureMapping(IMappingExpression<TDestination, TSource> map);
 
+        [Obsolete]
         public class TwoWayMapper : Mapper, ITwoWayMapper<TSource, TDestination>
         {
             public TwoWayMapper(IMapper mapper)
@@ -33,16 +36,7 @@ namespace Affecto.Mapping.AutoMapper
             {
                 return mapper.Map<TDestination, TSource>(source, opt =>
                 {
-                    if (parameters != null)
-                    {
-                        foreach ((string parameterName, object parameterValue) parameter in parameters)
-                        {
-                            if (!string.IsNullOrWhiteSpace(parameter.parameterName) && parameter.parameterValue != null)
-                            {
-                                opt.Items.Add(parameter.parameterName, parameter.parameterValue);
-                            }
-                        }
-                    }
+                    AddMappingOperationOptionsItems(opt, parameters);
                 });
             }
         }

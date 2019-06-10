@@ -1,5 +1,8 @@
-﻿namespace Affecto.Mapping
+﻿using System;
+
+namespace Affecto.Mapping
 {
+    [Obsolete]
     public interface ITwoWayMapper<TSource, TDestination> : IMapper<TSource, TDestination>
     {
         TSource Map(TDestination source);
