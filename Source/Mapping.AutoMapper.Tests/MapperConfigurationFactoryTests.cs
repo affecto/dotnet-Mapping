@@ -18,7 +18,7 @@ namespace Affecto.Mapping.AutoMapper.Tests
         [TestMethod]
         public void MapperIsConfiguredWithAssemblyProfiles()
         {
-            TestMappingProfile testMappingProfile = new TestMappingProfile();
+            TestMappingProfile1 testMappingProfile = new TestMappingProfile1();
             MapperConfiguration mapperConfiguration = sut.CreateMapperConfiguration(Assembly.GetExecutingAssembly());
 
             IMapper<Class1, Class2> mapper = testMappingProfile.CreateMapper(mapperConfiguration.CreateMapper());
