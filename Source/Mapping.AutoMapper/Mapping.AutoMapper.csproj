@@ -10,7 +10,7 @@
     <Authors>Affecto</Authors>
     <PackageTags>affecto map mapping AutoMapper</PackageTags>
     <PackageProjectUrl>https://github.com/affecto/dotnet-Mapping</PackageProjectUrl>
-    <PackageReleaseNotes>Added possibility to pass parameters to a mapping profile</PackageReleaseNotes>
+    <PackageReleaseNotes>Added possibility to pass parameters to a mapping profile. Deprecated two-way-mapping.</PackageReleaseNotes>
     <Description>AutoMapper implementation for one-way and two-way mapper interfaces defined in Affecto.Mapping NuGet.</Description>
   </PropertyGroup>
 

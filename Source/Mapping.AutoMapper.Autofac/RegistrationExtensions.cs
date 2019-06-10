@@ -1,4 +1,5 @@
-﻿using Autofac;
+﻿using System;
+using Autofac;
 using AutoMapper;
 
 namespace Affecto.Mapping.AutoMapper.Autofac
@@ -53,6 +54,7 @@ namespace Affecto.Mapping.AutoMapper.Autofac
         /// <typeparam name="TProfile">Mapping profile type.</typeparam>
         /// <typeparam name="TSource">Mapping source type.</typeparam>
         /// <typeparam name="TDestination">Mapping destination type.</typeparam>
+        [Obsolete("Two-way mapping is deprecated and it is going to be removed in a future major version.", false)]
         public static void RegisterTwoWayMappingProfile<TProfile, TSource, TDestination>(this ContainerBuilder builder)
             where TProfile : Profile, ITwoWayMappingProfile<TSource, TDestination>
         {

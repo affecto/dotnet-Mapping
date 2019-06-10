@@ -44,7 +44,7 @@ namespace Affecto.Mapping.AutoMapper
                 });
             }
 
-            internal void AddMappingOperationOptionsItems<TS, TD>(IMappingOperationOptions<TS, TD> options, (string parameterName, object parameterValue)[] parameters)
+            private void AddMappingOperationOptionsItems(IMappingOperationOptions<TSource, TDestination> options, (string parameterName, object parameterValue)[] parameters)
             {
                 if (parameters != null)
                 {

@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>Affecto.Mapping.AutoMapper.Autofac</AssemblyName>
     <RootNamespace>Affecto.Mapping.AutoMapper.Autofac</RootNamespace>
-    <PackageReleaseNotes>Added possibility to pass parameters to a mapping profile</PackageReleaseNotes>
+    <PackageReleaseNotes>Added possibility to pass parameters to a mapping profile. Deprecated two-way-mapping.</PackageReleaseNotes>
     <Version>4.2.0</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Affecto</Authors>
