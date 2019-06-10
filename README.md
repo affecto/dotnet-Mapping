@@ -149,7 +149,7 @@ public class SomeService
 
 #### Passing extra parameters to mapper
 
-In the mapping profile, define that a property get's its value from context items with s specific key:
+In the mapping profile, define that a property gets its value from context items with s specific key:
 
 ```csharp
 internal class PersonProfile : MappingProfile<IPerson, Person>
